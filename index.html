@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1' />
+    <meta name='color-scheme' content='dark' />
+    <title>Exponent Farm Live Dashboard</title>
+    <link rel='icon' href='data:,' />
+    <link rel='stylesheet' href='/styles.css' />
+  </head>
+  <body>
+    <header class='topbar'>
+      <div class='brand'>
+        <div class='mark'>E</div>
+        <span>Exponent</span>
+      </div>
+      <nav class='nav' aria-label='Primary'>
+        <a href='#'>Income</a>
+        <a class='active' href='#'>Farm</a>
+        <a href='#'>Liquidity</a>
+      </nav>
+      <div class='status-pill' aria-live='polite'>
+        <span class='pulse'></span>
+        <span id='statusText'>Loading live data</span>
+      </div>
+    </header>
+
+    <main class='shell'>
+      <section class='hero'>
+        <div class='hero-copy'>
+          <h1>Farm Variable Yields</h1>
+          <p>
+            Buy exposure to DeFi yields with Yield Tokens (YTs), offering guaranteed streams
+            of variable yield.
+          </p>
+          <div class='benefits'>
+            <span>↗ Yield leverage</span>
+            <span>⌛ No liquidation risks</span>
+            <span>⚡ High exposure</span>
+          </div>
+        </div>
+        <div class='info-grid'>
+          <article>
+            <strong>Performance</strong>
+            <p>Best when the underlying APY is undervalued or when amplified exposure is useful.</p>
+          </article>
+          <article>
+            <strong>Risk</strong>
+            <p>YTs are purchased on an implied APY; lower realized APY can reduce maturity returns.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class='refresh-row' aria-label='Refresh status'>
+        <div>
+          <span class='muted'>Auto-refresh</span>
+          <strong>Every 20 seconds</strong>
+        </div>
+        <div class='meter' aria-hidden='true'><span id='refreshMeter'></span></div>
+        <div class='updated' id='updatedText'>Waiting for first refresh</div>
+      </section>
+
+      <section class='cards' id='cards' aria-label='Top markets'></section>
+
+      <section class='table-card' aria-label='Farm markets'>
+        <div class='table-head'>
+          <span>Market</span>
+          <span>Effective Exposure</span>
+          <span>Liquidity</span>
+          <span>Underlying APY</span>
+          <span>Implied APY</span>
+          <span></span>
+        </div>
+        <div id='marketRows' class='market-rows'></div>
+      </section>
+    </main>
+
+    <script src='/app.js'></script>
+  </body>
+</html>
